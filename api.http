@@ -1,0 +1,35 @@
+@host = http://localhost:3100
+@baseUrl = {{host}}/api/v1
+@contentType = application/json
+
+POST {{baseUrl}}/books
+Content-Type: {{contentType}}
+
+{
+    "title": "O Senhor dos Anéis",
+    "subtitle": "A Sociedade do Anel",
+    "author": "J.R.R Tolkien",
+    "genre": "Fantasia",
+    "cover": "https://m.media-amazon.com/images/I/81SM0D5+DwL._SL1500_.jpg"
+}
+###
+GET {{baseUrl}}/books
+Content-Type: {{contentType}}
+
+
+###
+GET {{baseUrl}}/books/6707b33b6014be855e3c50b4
+Content-Type: {{contentType}}
+
+###
+PUT {{baseUrl}}/books/6707b33b6014be855e3c50b4
+Content-Type: {{contentType}}
+
+{
+  "subtitle": "Igor é um amorzinho",
+  "cover": "https://harpercollins.com.br/cdn/shop/products/9786555113624_84e92bc9-fe5b-4d2c-9c79-5d2153540499.jpg"
+}
+
+###
+DELETE {{baseUrl}}/books/6707b33b6014be855e3c50b4
+Content-Type: {{contentType}}
